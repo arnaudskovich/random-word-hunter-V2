@@ -26,7 +26,6 @@ class Game {
 		this._lives = letters.length + 2;
 		this._word = letters;
 		currentHidder.remove();
-		console.log(letters);
 		return letters;
 	}
 	hasLetterIn(letter) {
