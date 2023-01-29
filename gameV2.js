@@ -22,10 +22,11 @@ class Game {
 	async generateWord() {
 		const currentHidder = document.body.appendChild(blockingDiv);
 		currentHidder.focus();
-		const letters = (await (await fetch("https://random-word-api.herokuapp.com/word/")).json())[0];
+		const letters = (await (await fetch("https://random-word-api.herokuapp.com/word/")).json())[0].toLowerCase();
 		this._lives = letters.length + 2;
 		this._word = letters;
 		currentHidder.remove();
+		console.log(letters);
 		return letters;
 	}
 	hasLetterIn(letter) {
@@ -76,7 +77,7 @@ function start(word, life_count) {
 	lForm.addEventListener("submit", (e) => {
 		e.preventDefault();
 		e.stopPropagation();
-		const vl = lInput.value;
+		const vl = lInput.value.toLowerCase();
 		lInput.disabled = true;
 		submit.disabled = true;
 		lInput.value = "";
