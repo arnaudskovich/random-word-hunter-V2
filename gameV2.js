@@ -22,7 +22,7 @@ class Game {
 	async generateWord() {
 		const currentHidder = document.body.appendChild(blockingDiv);
 		currentHidder.focus();
-		const length = (Math.random().toString()[Math.random().toString()[2];
+		const length = Math.random().toString()[Math.random().toString()[2]];
 		const letters = (await (await fetch("https://wordhunter-seven.vercel.app/random-word/fr/"+length)).json()).word.toLowerCase();
 		this._lives = letters.length + 2;
 		this._word = letters;
