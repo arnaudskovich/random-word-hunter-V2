@@ -23,7 +23,7 @@ class Game {
 		const currentHidder = document.body.appendChild(blockingDiv);
 		currentHidder.focus();
 		const length = Math.random().toString()[Math.random().toString()[2]];
-		const letters = (await (await fetch("https://wordhunter-seven.vercel.app/random-word/fr/8")).json()).word.toLowerCase();
+		const letters = (await (await fetch("https://wordhunter-seven.vercel.app/random-word/fr/6")).json()).word.toLowerCase();
 		this._lives = letters.length + 2;
 		this._word = letters;
 		currentHidder.remove();
